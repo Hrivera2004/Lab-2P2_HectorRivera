@@ -30,14 +30,14 @@ public class Lab2P2_HectorRivera {
                     
                     if (UserList.get(found).getTipo()=="Estudiante") {
                         int opc1=0;
-                        while(opc1!=5){
+                        while(opc1!=2){
                             opc1=Integer.parseInt(JOptionPane.showInputDialog("1.-Listar\n2.-salir"));
                             switch(opc1){
                                 case 1:{
-                                    System.out.println("adasd");
+                                    System.out.println("-------");
                                     List();
                                 }break;
-                                case 2:{}
+                                case 2:{}break;
                                 default:
                                     JOptionPane.showMessageDialog(null, "Valor no valido");
                             }
@@ -49,6 +49,7 @@ public class Lab2P2_HectorRivera {
                             opc1=Integer.parseInt(JOptionPane.showInputDialog("1.listar\n2.crear\n3.-salir"));
                             switch(opc1){
                                 case 1:{
+                                    System.out.println("-------");
                                     List();
                                 }break;
                                 case 2:{
@@ -66,6 +67,7 @@ public class Lab2P2_HectorRivera {
                             opc1=Integer.parseInt(JOptionPane.showInputDialog("1.-Listar\n2.-Crear\n3.-Delete\n4.-modificar\n5.-salir"));
                             switch(opc1){
                                 case 1:{
+                                    System.out.println("-------");
                                     List();
                                 }break;
                                 case 2:{
@@ -77,7 +79,7 @@ public class Lab2P2_HectorRivera {
                                 case 4:{
                                     modificar();
                                 }break;
-                                case 5:{}
+                                case 5:{}break;
                                 default:
                                     JOptionPane.showMessageDialog(null, "Valor no valido");
                             }
@@ -133,6 +135,7 @@ public class Lab2P2_HectorRivera {
                         JOptionPane.showInputDialog("fecha:"),
                         disponible
                 );
+                ItemList.add(newBook);
             }break;
             case 2:{
                 boolean disponible = true;
@@ -141,38 +144,63 @@ public class Lab2P2_HectorRivera {
                 }else{
                     disponible = false;
                 }
-                Artículos newBook = new Artículos( 
+                Artículos newArt = new Artículos( 
                         JOptionPane.showInputDialog("Nombre:"),
                         JOptionPane.showInputDialog("Autor:"),
                         JOptionPane.showInputDialog("Tema:"),
                         JOptionPane.showInputDialog("fecha:"),
                         disponible
                 );
+                ItemList.add(newArt);
             }break;
             case 3:{
-                CursosEnLínea newBook = new CursosEnLínea( 
+                CursosEnLínea NewCruso = new CursosEnLínea( 
                         JOptionPane.showInputDialog("Titulo:"),
                         JOptionPane.showInputDialog("Instructor:"),
                         JOptionPane.showInputDialog("genero:"),
                         JOptionPane.showInputDialog("duracion:"),
                         JOptionPane.showInputDialog("plataforma:")
                 );
+                ItemList.add(NewCruso);
             }break;
             case 4:{
-                ConferenciasVirtuales newBook = new ConferenciasVirtuales( 
+                ConferenciasVirtuales newConf = new ConferenciasVirtuales( 
                         JOptionPane.showInputDialog("Titulo:"),
                         JOptionPane.showInputDialog("Conferencista:"),
                         JOptionPane.showInputDialog("fecha:"),
                         JOptionPane.showInputDialog("duracion:"),
                         JOptionPane.showInputDialog("enlace:")
                 );
+                ItemList.add(newConf);
             }
         }
     }
     
     public static void delete(){
-        int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion de cual desea eliminar"));
-        ItemList.remove(posicion);
+        String titulo = JOptionPane.showInputDialog("Ingrese el titulo de cual desea eliminar");
+        for (int i = 0; i < ItemList.size(); i++) {
+            if(ItemList.get(i) instanceof Libros){
+                if(((Libros)ItemList.get(i)).getTitle().equalsIgnoreCase(titulo)){
+                    ItemList.remove(i);
+                }
+            }
+            if(ItemList.get(i) instanceof Artículos){
+                if(((Artículos)ItemList.get(i)).getTitle().equalsIgnoreCase(titulo)){
+                    ItemList.remove(i);
+                }
+            }
+            if(ItemList.get(i) instanceof CursosEnLínea){
+                if(((CursosEnLínea)ItemList.get(i)).getTitle().equalsIgnoreCase(titulo)){
+                    ItemList.remove(i);
+                }
+            }
+            if(ItemList.get(i) instanceof ConferenciasVirtuales){
+                if(((ConferenciasVirtuales)ItemList.get(i)).getTitle().equalsIgnoreCase(titulo)){
+                    ItemList.remove(i);
+                }
+            }
+        }
+        
     }
     public static void modificar(){
         int posicion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion de cual desea modificar"));
@@ -184,16 +212,16 @@ public class Lab2P2_HectorRivera {
                                                                         "5.- Acceso"));
             switch(option){
                 case 1:{
-                    ((Libros)ItemList.get(option)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
+                    ((Libros)ItemList.get(posicion)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
                 }break;
                 case 2:{
-                    ((Libros)ItemList.get(option)).setAutor( JOptionPane.showInputDialog("Ingrese nuevo autor") );
+                    ((Libros)ItemList.get(posicion)).setAutor( JOptionPane.showInputDialog("Ingrese nuevo autor") );
                 }break;
                 case 3:{
-                    ((Libros)ItemList.get(option)).setGenero(JOptionPane.showInputDialog("Ingrese nuevo autor") );
+                    ((Libros)ItemList.get(posicion)).setGenero(JOptionPane.showInputDialog("Ingrese nuevo autor") );
                 }break;
                 case 4:{
-                    ((Libros)ItemList.get(option)).setFechaP(JOptionPane.showInputDialog("Ingrese nueva fecha") );
+                    ((Libros)ItemList.get(posicion)).setFechaP(JOptionPane.showInputDialog("Ingrese nueva fecha") );
                 }break;
                 case 5:{
                     boolean disponible = true;
@@ -202,7 +230,7 @@ public class Lab2P2_HectorRivera {
                 }else{
                     disponible = false;
                 }
-                    ((Libros)ItemList.get(option)).setDisponible(disponible);
+                    ((Libros)ItemList.get(posicion)).setDisponible(disponible);
                 }break;
             }
         }else if(ItemList.get(posicion) instanceof Artículos){
@@ -213,16 +241,16 @@ public class Lab2P2_HectorRivera {
             "    5. Acceso;"));
             switch(option){
                 case 1:{
-                    ((Artículos)ItemList.get(option)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
+                    ((Artículos)ItemList.get(posicion)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
                 }break;
                 case 2:{
-                    ((Artículos)ItemList.get(option)).setAutor( JOptionPane.showInputDialog("Ingrese nuevo autor") );
+                    ((Artículos)ItemList.get(posicion)).setAutor( JOptionPane.showInputDialog("Ingrese nuevo autor") );
                 }break;
                 case 3:{
-                    ((Artículos)ItemList.get(option)).setTema(JOptionPane.showInputDialog("Ingrese nuevo tema") );
+                    ((Artículos)ItemList.get(posicion)).setTema(JOptionPane.showInputDialog("Ingrese nuevo tema") );
                 }break;
                 case 4:{
-                    ((Artículos)ItemList.get(option)).setFechaP(JOptionPane.showInputDialog("Ingrese nueva fecha") );
+                    ((Artículos)ItemList.get(posicion)).setFechaP(JOptionPane.showInputDialog("Ingrese nueva fecha") );
                 }break;
                 case 5:{
                     boolean disponible = true;
@@ -231,7 +259,7 @@ public class Lab2P2_HectorRivera {
                 }else{
                     disponible = false;
                 }
-                    ((Artículos)ItemList.get(option)).setAcceso(disponible);
+                    ((Artículos)ItemList.get(posicion)).setAcceso(disponible);
                 }break;
             }
         }else if(ItemList.get(posicion) instanceof CursosEnLínea){
@@ -243,19 +271,19 @@ public class Lab2P2_HectorRivera {
             switch(option){
                 case 1:{
                     
-                    ((CursosEnLínea)ItemList.get(option)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
+                    ((CursosEnLínea)ItemList.get(posicion)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
                 }break;
                 case 2:{
-                    ((CursosEnLínea)ItemList.get(option)).setIntructor(JOptionPane.showInputDialog("Ingrese nuevo intructor") );
+                    ((CursosEnLínea)ItemList.get(posicion)).setIntructor(JOptionPane.showInputDialog("Ingrese nuevo intructor") );
                 }break;
                 case 3:{
-                    ((CursosEnLínea)ItemList.get(option)).setGenero(JOptionPane.showInputDialog("Ingrese nuevo genero") );
+                    ((CursosEnLínea)ItemList.get(posicion)).setGenero(JOptionPane.showInputDialog("Ingrese nuevo genero") );
                 }break;
                 case 4:{
-                    ((CursosEnLínea)ItemList.get(option)).setDuracion(JOptionPane.showInputDialog("Ingrese nueva duracion") );
+                    ((CursosEnLínea)ItemList.get(posicion)).setDuracion(JOptionPane.showInputDialog("Ingrese nueva duracion") );
                 }break;
                 case 5:{
-                    ((CursosEnLínea)ItemList.get(option)).setPlataforma(JOptionPane.showInputDialog("Ingrese nueva plataforma"));
+                    ((CursosEnLínea)ItemList.get(posicion)).setPlataforma(JOptionPane.showInputDialog("Ingrese nueva plataforma"));
                 }break;
             }
         }else if(ItemList.get(posicion) instanceof ConferenciasVirtuales){
@@ -266,19 +294,19 @@ public class Lab2P2_HectorRivera {
 "    5.- Enlace;"));
             switch(option){
                 case 1:{
-                    ((ConferenciasVirtuales)ItemList.get(option)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
+                    ((ConferenciasVirtuales)ItemList.get(posicion)).setTitle(JOptionPane.showInputDialog("Ingrese nuevo Titulo") );
                 }break;
                 case 2:{
-                    ((ConferenciasVirtuales)ItemList.get(option)).setConferencista(JOptionPane.showInputDialog("Ingrese nuevo conferencista") );
+                    ((ConferenciasVirtuales)ItemList.get(posicion)).setConferencista(JOptionPane.showInputDialog("Ingrese nuevo conferencista") );
                 }break;
                 case 3:{
-                    ((ConferenciasVirtuales)ItemList.get(option)).setFecha(JOptionPane.showInputDialog("Ingrese nuevo fecha") );
+                    ((ConferenciasVirtuales)ItemList.get(posicion)).setFecha(JOptionPane.showInputDialog("Ingrese nuevo fecha") );
                 }break;
                 case 4:{
-                    ((ConferenciasVirtuales)ItemList.get(option)).setDuracion(JOptionPane.showInputDialog("Ingrese nueva duracion") );
+                    ((ConferenciasVirtuales)ItemList.get(posicion)).setDuracion(JOptionPane.showInputDialog("Ingrese nueva duracion") );
                 }break;
                 case 5:{
-                    ((ConferenciasVirtuales)ItemList.get(option)).setEnlace(JOptionPane.showInputDialog("Ingrese nueva enlace"));
+                    ((ConferenciasVirtuales)ItemList.get(posicion)).setEnlace(JOptionPane.showInputDialog("Ingrese nueva enlace"));
                 }break;
             }
         }
