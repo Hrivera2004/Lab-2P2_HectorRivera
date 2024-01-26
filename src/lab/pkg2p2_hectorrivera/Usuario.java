@@ -45,6 +45,11 @@ public class Usuario {
     public void setTipo(String Tipo) {
         this.Tipo = Tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "name=" + name + ", Contrase\u00f1a=" + Contraseña + ", Tipo=" + Tipo + '}';
+    }
     
     public int verUser(ArrayList<Usuario> Lista, String UserSent){
         for (int i = 0; i < Lista.size(); i++) {
@@ -62,4 +67,5 @@ public class Usuario {
         }
         return false;
     }
+    
 }
