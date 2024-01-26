@@ -14,13 +14,13 @@ public class Artículos {
     String title;
     String Autor;
     String tema;
-    Date FechaP;
+    String FechaP;
     Boolean Acceso;
 
     public Artículos() {
     }
 
-    public Artículos(String title, String Autor, String tema, Date FechaP, Boolean Acceso) {
+    public Artículos(String title, String Autor, String tema, String FechaP, Boolean Acceso) {
         this.title = title;
         this.Autor = Autor;
         this.tema = tema;
@@ -52,11 +52,11 @@ public class Artículos {
         this.tema = tema;
     }
 
-    public Date getFechaP() {
+    public String getFechaP() {
         return FechaP;
     }
 
-    public void setFechaP(Date FechaP) {
+    public void setFechaP(String FechaP) {
         this.FechaP = FechaP;
     }
 

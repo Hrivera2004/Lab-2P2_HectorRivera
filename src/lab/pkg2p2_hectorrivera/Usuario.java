@@ -60,13 +60,12 @@ public class Usuario {
         }
         return pos;
     }
-    public boolean verContra(ArrayList<Usuario> Lista, String ContraSent){
-        for (int i = 0; i < Lista.size(); i++) {
-            if (Lista.get(i).getContraseña()== ContraSent) {
+    public boolean verContra(ArrayList<Usuario> Lista, String ContraSent,int pos){
+            if (((String)Lista.get(pos).getContraseña()).equals(ContraSent)) {
                 return true;
+            }else{
+                return false;
             }
-        }
-        return false;
     }
     
 }
