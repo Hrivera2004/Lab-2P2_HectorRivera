@@ -20,7 +20,7 @@ public class Lab2P2_HectorRivera {
         while(opc == 0){
             String username = JOptionPane.showInputDialog("Ingrese su User");
             int found = User.verUser(UserList, username);
-            
+            System.out.println(found);
             if (found!=-1) {
                 String contraseña = JOptionPane.showInputDialog("Ingrese su Contraseña");
                 
@@ -32,7 +32,7 @@ public class Lab2P2_HectorRivera {
                             opc1=Integer.parseInt(JOptionPane.showInputDialog("1.-Listar\n2.-salir"));
                             switch(opc1){
                                 case 1:{
-                                    
+                                    List();
                                 }break;
                                 case 2:{}
                                 default:
@@ -46,7 +46,7 @@ public class Lab2P2_HectorRivera {
                             opc1=Integer.parseInt(JOptionPane.showInputDialog("1.-\n2.-\n3.-\n4.-\n5.-salir"));
                             switch(opc1){
                                 case 1:{
-                                    
+                                    List();
                                 }break;
                                 case 2:{
                                     
@@ -63,7 +63,7 @@ public class Lab2P2_HectorRivera {
                             opc1=Integer.parseInt(JOptionPane.showInputDialog("1.-\n2.-\n3.-\n4.-\n5.-salir"));
                             switch(opc1){
                                 case 1:{
-                                    
+                                    List();
                                 }break;
                                 case 2:{
                                     
@@ -87,7 +87,7 @@ public class Lab2P2_HectorRivera {
             }else{
             JOptionPane.showMessageDialog(null, "No se encontro el usario");
             }
-            
+           opc = JOptionPane.showConfirmDialog(null, "Desea continuar?");
         }
     }
     public static void StartUsers(){

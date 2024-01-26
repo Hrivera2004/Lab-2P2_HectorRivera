@@ -52,12 +52,13 @@ public class Usuario {
     }
     
     public int verUser(ArrayList<Usuario> Lista, String UserSent){
+        int pos = -1;
         for (int i = 0; i < Lista.size(); i++) {
-            if (Lista.get(i).getName()== UserSent) {
-                return i;
+            if (Lista.get(i).getName().equalsIgnoreCase(UserSent)) {
+                pos = i;
             }
         }
-        return -1;
+        return pos;
     }
     public boolean verContra(ArrayList<Usuario> Lista, String ContraSent){
         for (int i = 0; i < Lista.size(); i++) {
