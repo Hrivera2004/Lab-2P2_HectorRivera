@@ -27,6 +27,22 @@ public class Libros {
         this.Disponible = Disponible;
     }
 
+    public Libros(String title, String Autor, String genero, String FechaP, Boolean Disponible) {
+        this.title = title;
+        this.Autor = Autor;
+        this.genero = genero;
+        this.FechaP = FechaP;
+        this.Disponible = Disponible;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     public String getTitle() {
         return title;
     }
