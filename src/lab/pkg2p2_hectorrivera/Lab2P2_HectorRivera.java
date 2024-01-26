@@ -1,20 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package lab.pkg2p2_hectorrivera;
 
+
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author hrolriverav
+ * @author Hector Rolando Rivera Varela
  */
 public class Lab2P2_HectorRivera {
-
     static ArrayList<Usuario> UserList = new ArrayList<Usuario>();
-    
+
     public static void main(String[] args) {
         Usuario User = new Usuario();
         StartUsers();
