@@ -1,20 +1,38 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package lab.pkg2p2_hectorrivera;
+
+    import javax.swing.JOptionPane;
 
 /**
  *
- * @author hrolriverav
+ * @author Hector Rolando Rivera Varela
  */
 public class Lab2P2_HectorRivera {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("ADADASDADADAWDASDASDAWSd");
+        int opc = 0;
+        
+        System.out.println("dsadasdad");
+        while(opc!=4){
+            opc = Integer.parseInt(JOptionPane.showInputDialog(null, "1.-\n2.-\n3.-\n4.-"));
+            switch(opc){
+                case 1:{
+                    
+                }break;
+                case 2:{
+                    
+                }break;
+                case 3:{
+                    
+                }break;
+                case 4:
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Ingrese un valor valido");
+            }
+        }
+        
     }
     
 }
