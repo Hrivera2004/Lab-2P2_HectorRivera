@@ -45,13 +45,14 @@ public class Lab2P2_HectorRivera {
                         
                     }else if(UserList.get(found).getTipo()=="profesor"){
                         int opc1=0;
-                        while(opc1!=5){
-                            opc1=Integer.parseInt(JOptionPane.showInputDialog("1.-\n2.-\n3.-\n4.-\n5.-salir"));
+                        while(opc1!=3){
+                            opc1=Integer.parseInt(JOptionPane.showInputDialog("1.listar\n2.crear\n3.-salir"));
                             switch(opc1){
                                 case 1:{
                                     List();
                                 }break;
                                 case 2:{
+                                    
                                     
                                 }break;
                                 case 3:{}break;
@@ -113,8 +114,54 @@ public class Lab2P2_HectorRivera {
     }
     public static void List(){
         for (int i = 0; i < ItemList.size(); i++) {
-            System.out.println("------------");
+            System.out.println("");
             System.out.println(ItemList.get(i));
+        }
+    }
+    public static void crear(){
+        int editOption = Integer.parseInt(JOptionPane.showInputDialog("1.- Crear Libro \n2.-Crear Articulo\n3.-Crear Curso en Linea\n4.-Conferencia Virtual"));
+        switch(editOption){
+            case 1:{
+                boolean disponible = true;
+                if (JOptionPane.showInputDialog("disponible:").equalsIgnoreCase("si")) {
+                    disponible= true;
+                }else{
+                    disponible = false;
+                }
+                Libros newBook = new Libros( 
+                        JOptionPane.showInputDialog("Nombre:"),
+                        JOptionPane.showInputDialog("Autor:"),
+                        JOptionPane.showInputDialog("fecha:"),
+                        disponible
+                );
+            }break;
+            case 2:{
+                boolean disponible = true;
+                if (JOptionPane.showInputDialog("disponible(si/no):").equalsIgnoreCase("si")) {
+                    disponible= true;
+                }else{
+                    disponible = false;
+                }
+                Artículos newBook = new Artículos( 
+                        JOptionPane.showInputDialog("Nombre:"),
+                        JOptionPane.showInputDialog("Autor:"),
+                        JOptionPane.showInputDialog("Tema:"),
+                        JOptionPane.showInputDialog("fecha:"),
+                        disponible
+                );
+            }break;
+            case 3:{
+                CursosEnLínea newBook = new CursosEnLínea( 
+                        JOptionPane.showInputDialog("Titulo:"),
+                        JOptionPane.showInputDialog("Instructor:"),
+                        JOptionPane.showInputDialog("genero:"),
+                        JOptionPane.showInputDialog("duracion:"),
+                        JOptionPane.showInputDialog("plataforma:")
+                );
+            }break;
+            case 4:{
+                
+            }
         }
     }
     

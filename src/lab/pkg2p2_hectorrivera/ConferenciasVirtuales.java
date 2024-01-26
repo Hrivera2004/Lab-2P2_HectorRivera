@@ -14,13 +14,13 @@ public class ConferenciasVirtuales {
     String title;
     String Conferencista;
     String fecha;
-    int Duracion;
+    String Duracion;
     String Enlace;
 
     public ConferenciasVirtuales() {
     }
 
-    public ConferenciasVirtuales(String title, String Conferencista, String fecha, int Duracion, String Enlace) {
+    public ConferenciasVirtuales(String title, String Conferencista, String fecha, String Duracion, String Enlace) {
         this.title = title;
         this.Conferencista = Conferencista;
         this.fecha = fecha;
@@ -52,11 +52,11 @@ public class ConferenciasVirtuales {
         this.fecha = fecha;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return Duracion;
     }
 
-    public void setDuracion(int Duracion) {
+    public void setDuracion(String Duracion) {
         this.Duracion = Duracion;
     }
 

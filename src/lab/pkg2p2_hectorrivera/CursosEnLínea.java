@@ -14,13 +14,13 @@ public class CursosEnLínea {
     String title;
     String intructor;
     String genero;
-    int Duracion;
+    String Duracion;
     String plataforma;
 
     public CursosEnLínea() {
     }
 
-    public CursosEnLínea(String title, String intructor, String genero, int Duracion, String plataforma) {
+    public CursosEnLínea(String title, String intructor, String genero, String Duracion, String plataforma) {
         this.title = title;
         this.intructor = intructor;
         this.genero = genero;
@@ -52,11 +52,11 @@ public class CursosEnLínea {
         this.genero = genero;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return Duracion;
     }
 
-    public void setDuracion(int Duracion) {
+    public void setDuracion(String Duracion) {
         this.Duracion = Duracion;
     }
 
